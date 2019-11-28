@@ -28,7 +28,6 @@ public class MutanteController {
     @Autowired
     HumanoService humanoService;
 
-
     @PostMapping("/mutantes")
     public MutanteResponse postnewMutante(@RequestBody CandidatoRequest cr) {
         MutanteResponse mr = new MutanteResponse();
@@ -37,52 +36,41 @@ public class MutanteController {
             m.setAdn(cr.adn);
             m.setNombre(cr.nombre);
             mutanteService.grabar(m);
-            mr.isMutant= true;
-            mr.message= "Se catalogó como mutante";
-       
+            mr.isMutant = true;
+            mr.message = "Se catalogó como mutante";
 
-            
-        }
-        else {
+        } else {
             Humano h = new Humano();
             h.setAdn(cr.adn);
             h.setNombre(cr.nombre);
             humanoService.grabar(h);
-            mr.isMutant=false;
-            mr.message="Se catalogo como humano";
-   
+            mr.isMutant = false;
+            mr.message = "Se catalogo como humano";
 
         }
-       
+
         return mr;
     }
-    @GetMapping ("/mutantes") 
-public List<Mutante> getMutantes() {
-    List<Mutante> mt = new ArrayList<>();
-    mt = mutanteService.buscarTodos();
-    return mt;
-}
-/**
- * Get del punto 3
- * @return
- */
+
+    @GetMapping("/mutantes")
+    public List<Mutante> getMutantes() {
+        List<Mutante> mt = new ArrayList<>();
+        mt = mutanteService.buscarTodos();
+        return mt;
+    }
+
+    /**
+     * Get del punto 3
+     * 
+     * @return
+     */
     @GetMapping("/stats")
-    public StatsResponse getStatsResponse(){
+    public StatsResponse getStatsResponse() {
         StatsResponse st = new StatsResponse();
         st.count_mutant_dna = mutanteService.contar();
         st.count_human_dna = humanoService.contar();
-        st.ratio= st.count_mutant_dna/st.count_human_dna;
+        st.ratio = st.count_mutant_dna / st.count_human_dna;
         return st;
     }
 
-   
-    
-
-
-
-
-
-
-
-  
 }
