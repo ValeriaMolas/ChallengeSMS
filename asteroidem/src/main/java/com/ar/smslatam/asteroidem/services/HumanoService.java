@@ -14,24 +14,22 @@ public class HumanoService {
 	@Autowired
 	HumanoRepository humanorepo;
 
-
 	/**
 	 * se graba en el repo humano los humanos
+	 * 
 	 * @param h
 	 */
 	public void grabar(Humano h) {
 		this.humanorepo.save(h);
 	}
 
-/**
- * cuenta para la cantidad de humanos que hay 
- * @return
- */
+	/**
+	 * cuenta para la cantidad de humanos que hay
+	 * 
+	 * @return
+	 */
 	public long contar() {
 		return humanorepo.count();
 	}
 
-
-
-    
 }

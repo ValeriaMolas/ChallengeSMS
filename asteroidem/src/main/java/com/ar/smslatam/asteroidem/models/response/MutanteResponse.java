@@ -7,6 +7,5 @@ public class MutanteResponse {
 
     public boolean isMutant;
     public String message;
-    
-    
+
 }

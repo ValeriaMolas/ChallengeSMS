@@ -8,5 +8,4 @@ public class CandidatoRequest {
     public String nombre;
     public String[] adn;
 
-    
 }

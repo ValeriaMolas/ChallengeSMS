@@ -7,9 +7,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 /**
  * Mutante
  */
-@Document ("Mutantes")
+@Document("Mutantes")
 public class Mutante {
-    @Id 
+    @Id
     private ObjectId _id;
     private String[] adn;
     private String nombre;
@@ -38,7 +38,4 @@ public class Mutante {
         this.nombre = nombre;
     }
 
-	
-
-    
 }

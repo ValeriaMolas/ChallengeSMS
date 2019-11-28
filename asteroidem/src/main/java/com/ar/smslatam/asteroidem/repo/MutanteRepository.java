@@ -10,9 +10,11 @@ import org.springframework.stereotype.Repository;
  * MutanteRepository
  */
 @Repository
-public interface MutanteRepository extends MongoRepository<Mutante, ObjectId>{
+public interface MutanteRepository extends MongoRepository<Mutante, ObjectId> {
     Mutante findBy_id(ObjectId _id);
+
     Mutante findByAdn(String adn);
+
     Mutante findByNombre(String nombre);
-    
+
 }

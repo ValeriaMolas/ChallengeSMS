@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 /**
  * Humano
  */
-@Document (collection = "Humanos")
+@Document(collection = "Humanos")
 public class Humano {
     @Id
     private ObjectId _id;
@@ -21,10 +21,6 @@ public class Humano {
     public void set_id(ObjectId _id) {
         this._id = _id;
     }
-
- 
-
-  
 
     public String getNombre() {
         return nombre;
@@ -42,8 +38,4 @@ public class Humano {
         this.adn = adn;
     }
 
- 
-
-
-    
 }
