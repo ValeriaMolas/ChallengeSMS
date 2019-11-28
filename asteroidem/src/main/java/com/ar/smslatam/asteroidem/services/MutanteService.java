@@ -72,6 +72,16 @@ public class MutanteService {
 						secuenciasRepetidas++;
 					}
 				}
+				if (f - 1 + 4 < adn.length) { // puedo buscar hacia abajo
+                    System.out.println("Entro por hacia abajo fila " + f + " columna  " + c);
+                    // Busco hacia abajo
+                    if (adn[f].charAt(c) == adn[f + 1].charAt(c) && adn[f].charAt(c) == adn[f + 2].charAt(c)
+                            && adn[f].charAt(c) == adn[f + 3].charAt(c)) {
+                        secuenciasRepetidas ++;
+                    }
+                } 
+					
+				
 			}
 		}
 

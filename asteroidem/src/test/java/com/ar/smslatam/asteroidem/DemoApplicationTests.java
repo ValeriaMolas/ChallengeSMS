@@ -33,8 +33,8 @@ class DemoApplicationTests {
         assertTrue(esMutante);
         
     }
-    
-  
+    @Test
+	
 	void verificarMutanteDNAVertical() {
         
 		String[] adn = {"CCTCTC", 
@@ -48,7 +48,7 @@ class DemoApplicationTests {
         assertTrue(esMutante);
         
     }
-    
+    @Test
     
     
     void verificarMutanteDNADiagonal() {
@@ -69,7 +69,7 @@ class DemoApplicationTests {
         
 		String[] adn = {"ACTATA", 
 						"ATCGCA", 
-						"AGTCTA", 
+						"AGTATA", 
 						"AGTGCG", 
 						"TATATC", 
 						"GTGATA" };
