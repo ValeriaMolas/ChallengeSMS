@@ -69,7 +69,7 @@ public class MutanteController {
         StatsResponse st = new StatsResponse();
         st.count_mutant_dna = mutanteService.contar();
         st.count_human_dna = humanoService.contar();
-        st.ratio = st.count_mutant_dna / st.count_human_dna;
+        st.ratio = st.count_mutant_dna*1.0d/ st.count_human_dna;
         return st;
     }
 
