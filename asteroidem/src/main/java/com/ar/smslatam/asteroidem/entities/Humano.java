@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Humano {
     @Id
     private ObjectId _id;
-    private char adn;
+    private String[] adn;
     private String nombre;
 
     public ObjectId get_id() {
@@ -22,9 +22,7 @@ public class Humano {
         this._id = _id;
     }
 
-    public char getAdn() {
-        return adn;
-    }
+ 
 
   
 
@@ -36,9 +34,15 @@ public class Humano {
         this.nombre = nombre;
     }
 
-	public void setAdn(char[][] adn) {
-        
-	}
+    public String[] getAdn() {
+        return adn;
+    }
+
+    public void setAdn(String[] adn) {
+        this.adn = adn;
+    }
+
+ 
 
 
     

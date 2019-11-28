@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Mutante {
     @Id 
     private ObjectId _id;
-    private char[][] adn;
+    private String[] adn;
     private String nombre;
 
     public ObjectId get_id() {
@@ -22,11 +22,11 @@ public class Mutante {
         this._id = _id;
     }
 
-    public char[][] getAdn() {
+    public String[] getAdn() {
         return adn;
     }
 
-    public void setAdn(char[][] adn) {
+    public void setAdn(String[] adn) {
         this.adn = adn;
     }
 

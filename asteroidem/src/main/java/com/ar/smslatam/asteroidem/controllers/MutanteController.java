@@ -7,6 +7,7 @@ import com.ar.smslatam.asteroidem.entities.Humano;
 import com.ar.smslatam.asteroidem.entities.Mutante;
 import com.ar.smslatam.asteroidem.models.request.CandidatoRequest;
 import com.ar.smslatam.asteroidem.models.response.MutanteResponse;
+import com.ar.smslatam.asteroidem.models.response.StatsResponse;
 import com.ar.smslatam.asteroidem.services.HumanoService;
 import com.ar.smslatam.asteroidem.services.MutanteService;
 
@@ -27,6 +28,7 @@ public class MutanteController {
     @Autowired
     HumanoService humanoService;
 
+
     @PostMapping("/mutantes")
     public MutanteResponse postnewMutante(@RequestBody CandidatoRequest cr) {
         MutanteResponse mr = new MutanteResponse();
@@ -37,6 +39,8 @@ public class MutanteController {
             mutanteService.grabar(m);
             mr.isMutant= true;
             mr.message= "Se catalogó como mutante";
+       
+
             
         }
         else {
@@ -46,6 +50,8 @@ public class MutanteController {
             humanoService.grabar(h);
             mr.isMutant=false;
             mr.message="Se catalogo como humano";
+   
+
         }
        
         return mr;
@@ -56,6 +62,23 @@ public List<Mutante> getMutantes() {
     mt = mutanteService.buscarTodos();
     return mt;
 }
+/**
+ * Get del punto 3
+ * @return
+ */
+    @GetMapping("/stats")
+    public StatsResponse getStatsResponse(){
+        StatsResponse st = new StatsResponse();
+        st.count_mutant_dna = mutanteService.contar();
+        st.count_human_dna = humanoService.contar();
+        st.ratio= st.count_mutant_dna/st.count_human_dna;
+        return st;
+    }
+
+   
+    
+
+
 
 
 

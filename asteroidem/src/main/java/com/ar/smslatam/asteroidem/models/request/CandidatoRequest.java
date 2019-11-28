@@ -6,7 +6,7 @@ package com.ar.smslatam.asteroidem.models.request;
 public class CandidatoRequest {
 
     public String nombre;
-    public char[][] adn;
+    public String[] adn;
 
     
 }
